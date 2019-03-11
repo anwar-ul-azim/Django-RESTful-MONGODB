@@ -14,6 +14,7 @@ ENV setup:
         pillow==5.4.1                 #Python Imaging Library
         python-decouple==3.1          #Strictly separate settings from code
         djangorestframework==3.9.2    #toolkit for building Web APIs
+        djangorestframework_simplejwt #token authentication
         djongo==1.2.31                #mongodb engine
         dnspython==1.16.0             #high and low level access to DNS
 

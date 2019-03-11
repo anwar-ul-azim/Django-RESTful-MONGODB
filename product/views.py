@@ -1,13 +1,15 @@
 # from django.shortcuts import render
-
+from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer, ProductSerializer, SellerSerializer, SubCategorySerializer, CategorySerializer, CustomerSerializer
 from .models import Product, Category, SubCategory, Seller, Customer
+from .serializers import UserSerializer, GroupSerializer, ProductSerializer, SellerSerializer, SubCategorySerializer, CategorySerializer, CustomerSerializer
+
+
 
 class ProductView(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 class CustomerView(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
